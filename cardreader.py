@@ -3,15 +3,18 @@
 #Desc: 
  #Prompts the user to select the anki exported .txt file and converts the card titles to an array.
 #Github repo:
-    #
+    #https://github.com/TheHeisenBurglar/AnkiArray
 
+#Imports 
 from tkinter import *
 import re
 from tkinter import filedialog
 
+#Variables
 text = "empty"
 ready = False
 towrite = []
+#Functions
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = "/",
                                           title = "Select a File",
@@ -36,6 +39,7 @@ def extractJapaneseText(textline):
 def toFile(toappend, array):
     array.append(word)
 
+#Logic
 text = browseFiles()      
 print(text) 
 file = open(text, "r")   
